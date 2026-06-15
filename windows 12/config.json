@@ -1,0 +1,143 @@
+{
+  "name": "Windows 12",
+  "version": "1.0.0",
+  "description": "Custom Windows 11 transformation into Windows 12",
+  "author": "Custom Build",
+  "buildDate": "2026-06-15",
+  
+  "customization": {
+    "taskbar": {
+      "position": "top",
+      "registryKey": "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
+      "valueName": "TaskbarSide",
+      "value": 1,
+      "description": "1=Top, 0=Bottom, 2=Left, 3=Right"
+    },
+    "theme": {
+      "mode": "dark",
+      "transparency": true,
+      "appsLightTheme": 0,
+      "systemLightTheme": 0,
+      "enableTransparency": 1
+    },
+    "optimization": {
+      "disableTelemetry": true,
+      "disabledServices": [
+        "DiagTrack",
+        "dmwappushservice",
+        "WMPNetworkSvc"
+      ],
+      "disableStartupApps": true
+    }
+  },
+
+  "tools": {
+    "autoInstall": true,
+    "packageManager": "chocolatey",
+    "packages": [
+      {
+        "name": "Visual Studio Code",
+        "chocolateyId": "vscode",
+        "category": "Development",
+        "required": false
+      },
+      {
+        "name": "Python",
+        "chocolateyId": "python",
+        "category": "Development",
+        "required": false
+      },
+      {
+        "name": "Node.js",
+        "chocolateyId": "nodejs",
+        "category": "Development",
+        "required": false
+      },
+      {
+        "name": "Git",
+        "chocolateyId": "git",
+        "category": "Development",
+        "required": false
+      },
+      {
+        "name": "7-Zip",
+        "chocolateyId": "7zip",
+        "category": "Utilities",
+        "required": false
+      },
+      {
+        "name": "VLC Media Player",
+        "chocolateyId": "vlc",
+        "category": "Multimedia",
+        "required": false
+      },
+      {
+        "name": "Firefox",
+        "chocolateyId": "firefox",
+        "category": "Browser",
+        "required": false
+      },
+      {
+        "name": "Google Chrome",
+        "chocolateyId": "googlechrome",
+        "category": "Browser",
+        "required": false
+      },
+      {
+        "name": "Docker Desktop",
+        "chocolateyId": "docker-desktop",
+        "category": "DevOps",
+        "required": false
+      }
+    ]
+  },
+
+  "systemRequirements": {
+    "operatingSystem": "Windows 11",
+    "versions": ["21H2", "22H2", "23H2"],
+    "editions": ["Home", "Pro", "Enterprise"],
+    "minimumDiskSpace": "50GB",
+    "minimumRam": "4GB",
+    "adminRequired": true
+  },
+
+  "installation": {
+    "methods": ["PowerShell", "Batch"],
+    "scripts": {
+      "powershell": "Install-Windows12.ps1",
+      "batch": "Install-Windows12.bat",
+      "tools": "Install-Tools.bat"
+    },
+    "autoRestart": true,
+    "createBackup": true,
+    "backupFile": "registry-backup.reg"
+  },
+
+  "features": [
+    "Taskbar customization",
+    "Dark theme application",
+    "System optimization",
+    "Automatic tool installation",
+    "Registry backup",
+    "Reversible changes",
+    "Multi-computer deployment"
+  ],
+
+  "known_issues": [
+    {
+      "issue": "Taskbar position not changing",
+      "solution": "Log out and log back in, or restart Windows",
+      "priority": "low"
+    },
+    {
+      "issue": "Permission denied errors",
+      "solution": "Run script as Administrator",
+      "priority": "high"
+    },
+    {
+      "issue": "Chocolatey installation fails",
+      "solution": "Check internet connection and run as Administrator",
+      "priority": "medium"
+    }
+  ]
+}

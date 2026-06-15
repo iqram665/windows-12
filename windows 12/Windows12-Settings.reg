@@ -1,0 +1,47 @@
+Windows Registry Editor Version 5.00
+
+; Windows 12 Registry Settings
+; Import this file to apply all customizations at once
+; Created: 2026-06-15
+
+; ============================================
+; Taskbar Customization
+; ============================================
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"TaskbarSide"=dword:00000001
+
+; ============================================
+; Theme Customization (Dark Mode)
+; ============================================
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize]
+"AppsUseLightTheme"=dword:00000000
+"SystemUsesLightTheme"=dword:00000000
+"EnableTransparency"=dword:00000001
+
+; ============================================
+; Start Menu Customization
+; ============================================
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"TaskbarAl"=dword:00000001
+
+; ============================================
+; File Explorer Customization
+; ============================================
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer]
+"link"=hex:00,00,00,00
+
+; ============================================
+; Sound Customization
+; ============================================
+[HKEY_CURRENT_USER\Control Panel\Sound]
+"Beep"="Yes"
+
+; ============================================
+; Additional Settings
+; ============================================
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects]
+"VisualFXSetting"=dword:00000003
+
+; ============================================
+; End of Windows 12 Registry Template
+; ============================================
